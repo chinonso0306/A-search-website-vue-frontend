@@ -42,8 +42,8 @@
       <h2 class="text-center text-3xl font-bold mb-2">Choose Your Category</h2>
       <p class="text-center mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, necessitatibus error. Facilis nemo laborum exercitationem.</p>
       <p class="text-center mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4">
-        <div v-for="category in categories" :key="category.id" class="p-4 bg-white rounded text-center shadow-xl transition-transform transform hover:scale-105">
+      <div   class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4">
+        <div  v-for="category in categories" :key="category.id" class="p-4 bg-white rounded text-center shadow-xl transition-transform transform hover:scale-105">
           <div class="text-red-500 mb-2">{{ category.icon }}</div>
           <h3 class="font-bold">{{ category.name }}</h3>
           <p>{{ category.jobs }} open positions</p>
@@ -57,7 +57,7 @@
       <p class="text-center mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, necessitatibus error. Facilis nemo laborum exercitationem.</p>
       <p class="text-center mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
-        <div v-for="job in jobs" :key="job.id" class="p-4 bg-red-50 rounded shadow hover:shadow-lg transition-shadow">
+        <div  v-for="job in jobs" :key="job.id" class="p-4 bg-red-50 rounded shadow hover:shadow-lg transition-shadow">
           <div class="flex justify-between items-center mb-2">
             <h3 class="font-bold">{{ job.title }}</h3>
             <span class="text-sm border border-x-2 border-y-2 p-2 cursor-pointer bg-rose-50 hover:bg-white hover:text-rose-300 font-bold text-p-2 rounded">{{ job.type }}</span>
@@ -78,7 +78,15 @@
 </template>
 
 <script>
+
+import { onMounted } from "vue";
+import AOS from "aos";
+
+onMounted(() => {
+    AOS.init();
+})
 export default {
+  
   data() {
     return {
       categories: [
