@@ -24,8 +24,8 @@
         <div class="text-center text-white">
           <h1 class="text-4xl font-bold mb-4">Drop Resume & Get Your Desire Job!</h1>
           <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-3 p-3">
-            <input type="text" placeholder="Job Title" class="p-2 rounded-l-md" />
-            <input type="text" placeholder="City or remote" class="p-2" />
+            <input type="text" placeholder="Job Title" class="p-2 rounded-l-md text-black" />
+            <input type="text" placeholder="City or remote" class="p-2 text-black" />
             <button class="bg-pink-300 p-2 rounded-r-md text-white font-bold">Find a Job</button>
           </div>
         </div>
