@@ -39,22 +39,45 @@
   </template>
   
   <script>
+  import {login, getUser} from '../authService'
+
   export default {
-    data() {
-      return {
-        email: '',
-        password: '',
-      };
+  data() {
+    return {
+      email: '',
+      password: '',
+      user: null,
+    };
+  },
+  methods: {
+    async handleSubmit() {
+      try {
+        await login({ email: this.email, password: this.password });
+        this.user = await getUser();
+        this.$router.push('/dashboard'); // Redirect to the dashboard or another route
+      } catch (error) {
+        console.error('Login error:', error.response);
+      }
     },
-    methods: {
-      handleSubmit() {
-        // Handle the login form submission
-        console.log('Email:', this.email);
-        console.log('Password:', this.password);
-        // Add your login logic here
-      },
-    },
-  };
+  },
+};
+  
+  // export default {
+  //   data() {
+  //     return {
+  //       email: '',
+  //       password: '',
+  //     };
+  //   },
+  //   methods: {
+  //     handleSubmit() {
+  //       // Handle the login form submission
+  //       console.log('Email:', this.email);
+  //       console.log('Password:', this.password);
+  //       // Add your login logic here
+  //     },
+  //   },
+  // };
   </script>
   
   <style scoped>
