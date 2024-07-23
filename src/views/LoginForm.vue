@@ -71,7 +71,13 @@ export default {
           }, 3000);
         }
       } catch (error) {
+        if (error.response.status == 401) {
+          toast.error("Unauthorized user", {
+            position: toast.POSITION.TOP_LEFT,
+          });
+        }
         console.error("Login error:", error.response);
+        console.error("Login error:", error.response.status);
       }
     },
   },

@@ -35,7 +35,9 @@
             />
           </div>
           <div class="col-span-1 md:col-span-2">
-            <label for="description" class="block text-gray-700">Description</label>
+            <label for="description" class="block text-gray-700"
+              >Description</label
+            >
             <textarea
               id="description"
               v-model="description"
@@ -53,7 +55,9 @@
             ></textarea>
           </div>
           <div class="col-span-1 md:col-span-2">
-            <label for="requirements" class="block text-gray-700">Job Requirements</label>
+            <label for="requirements" class="block text-gray-700"
+              >Job Requirements</label
+            >
             <textarea
               id="requirements"
               v-model="job_requirements"
@@ -85,20 +89,20 @@
 
 <script>
 // import {  } from '../jobService';
-import { getUser, createJob } from '../authService';
+import { getUser, createJob } from "../authService";
 import { toast } from "vue3-toastify";
 import "vue3-toastify/dist/index.css";
 
 export default {
   data() {
     return {
-      title: '',
-      description: '',
-      location: '',
-      tags: '',
-      salary: '',
-      benefits: '',
-      job_requirements: ''
+      title: "",
+      description: "",
+      location: "",
+      tags: "",
+      salary: "",
+      benefits: "",
+      job_requirements: "",
     };
   },
   methods: {
@@ -106,7 +110,7 @@ export default {
       try {
         const user = getUser();
         if (!user) {
-          throw new Error('User is not authenticated');
+          throw new Error("User is not authenticated");
         }
 
         const jobDetails = {
@@ -117,21 +121,27 @@ export default {
           salary: this.salary,
           benefits: this.benefits,
           job_requirements: this.job_requirements,
-          user_id: user.id
+          user_id: user.id,
         };
 
         const response = await createJob(jobDetails);
-        console.log('Job created:', response);
+        console.log("Job created:", response);
         if (response) {
           toast("Job has been Uploaded successfully", {
-            position: toast.POSITION.TOP_CENTER
+            position: toast.POSITION.TOP_CENTER,
           });
         }
       } catch (error) {
-        console.error('Error creating job:', error.response || error.message);
+        if (error.response.data.message) {
+          toast.error("The given data was invalid!", {
+            position: toast.POSITION.TOP_LEFT,
+          });
+        }
+        console.error("Error creating job:", error.response || error.message);
+        // console.log("the checking log", error.response.data.message);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
