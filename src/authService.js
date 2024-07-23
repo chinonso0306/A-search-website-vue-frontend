@@ -16,3 +16,15 @@ export const login = async (credentials) => {
     const response = await axios.get('/user');
     return response.data.user;
   };
+
+  export const createJob = async (jobDetails) => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('User is not authenticated');
+    }
+    const headers = {
+      Authorization: `Bearer ${token}`
+    };
+    const response = await axios.post('/jobs', jobDetails, { headers });
+    return response.data;
+  };

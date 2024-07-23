@@ -75,7 +75,9 @@
             />
           </div>
           <div class="col-span-1 md:col-span-2">
-            <label for="securityQuestion" class="block text-gray-700">Security Question</label>
+            <label for="securityQuestion" class="block text-gray-700"
+              >Security Question</label
+            >
             <select
               id="securityQuestion"
               v-model="securityQuestion"
@@ -89,7 +91,9 @@
             </select>
           </div>
           <div class="col-span-1 md:col-span-2">
-            <label for="securityAnswer" class="block text-gray-700">Answer</label>
+            <label for="securityAnswer" class="block text-gray-700"
+              >Answer</label
+            >
             <input
               type="text"
               id="securityAnswer"
@@ -107,7 +111,12 @@
               class="form-checkbox h-5 w-5 text-pink-300"
               required
             />
-            <span class="ml-2 text-gray-700">I agree to the <a href="#" class="text-pink-300 hover:underline">terms and conditions</a></span>
+            <span class="ml-2 text-gray-700"
+              >I agree to the
+              <a href="#" class="text-pink-300 hover:underline"
+                >terms and conditions</a
+              ></span
+            >
           </label>
         </div>
         <button
@@ -122,27 +131,29 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
+import { toast } from "vue3-toastify";
+import "vue3-toastify/dist/index.css";
 
 export default {
   data() {
     return {
-      name: '',
-      email: '',
-      phone: '',
-      address: '',
-      city: '',
-      country: '',
-      password: '',
-      securityQuestion: '',
-      securityAnswer: '',
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
+      city: "",
+      country: "",
+      password: "",
+      securityQuestion: "",
+      securityAnswer: "",
       agreeToTerms: false,
     };
   },
   methods: {
     async handleSubmit() {
       try {
-        const response = await axios.post('http://127.0.0.1:8000/api/users', {
+        const response = await axios.post("http://127.0.0.1:8000/api/users", {
           name: this.name,
           email: this.email,
           password: this.password,
@@ -153,9 +164,17 @@ export default {
           security_question: this.securityQuestion,
           security_answer: this.securityAnswer,
         });
-        console.log('User registered:', response.data);
+        console.log("User registered:", response.data);
+        if (response.data) {
+          toast.success("Signup Successful !", {
+            position: toast.POSITION.TOP_CENTER,
+          });
+          setTimeout(() => {
+            this.$router.push('/login');
+          }, 3000);
+        }
       } catch (error) {
-        console.error('Error registering user:', error.response);
+        console.error("Error registering user:", error.response);
       }
     },
   },
@@ -163,5 +182,7 @@ export default {
 </script>
 
 <style scoped>
-/* Add any additional styles here */
+.foo-bar {
+  color: #f00;
+}
 </style>

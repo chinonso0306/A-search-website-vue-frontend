@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LoginForm from '../views/LoginForm.vue'
 import SignupForm from '../views/SignupForm.vue'
+import Dashboard from '../views/JobDashboard.vue'
 
 
 const router = createRouter({
@@ -24,6 +25,13 @@ const router = createRouter({
       name: 'sign_up',
       component: SignupForm
     },
+
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: Dashboard
+    },
+
 
     {
       path: '/about',
