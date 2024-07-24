@@ -18,10 +18,10 @@ import HelloWorld from './components/HelloWorld.vue'
               <RouterLink to="/login">login</RouterLink>
               <RouterLink to="/test">login</RouterLink>
 
+              <RouterView />
             </div>
      
 
-  <RouterView />
 </template>
 
 <style scoped>

@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginForm from '../views/LoginForm.vue'
 import SignupForm from '../views/SignupForm.vue'
 import Dashboard from '../views/JobDashboard.vue'
+import JobDetails from '../components/JobDetails.vue'
 
 
 const router = createRouter({
@@ -24,6 +25,12 @@ const router = createRouter({
       path: '/signup',
       name: 'sign_up',
       component: SignupForm
+    },
+
+    {
+      path: '/jobs/:id',
+      name: 'JobDetails',
+      component: JobDetails
     },
 
     {
