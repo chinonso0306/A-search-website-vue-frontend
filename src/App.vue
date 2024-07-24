@@ -10,6 +10,10 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
 
+  <div>
+
+ 
+
     
             <div class="hidden">
               <RouterLink to="/">Home</RouterLink>
@@ -18,10 +22,10 @@ import HelloWorld from './components/HelloWorld.vue'
               <RouterLink to="/login">login</RouterLink>
               <RouterLink to="/test">login</RouterLink>
 
-              <RouterView />
             </div>
+            <RouterView />
      
-
+          </div>
 </template>
 
 <style scoped>

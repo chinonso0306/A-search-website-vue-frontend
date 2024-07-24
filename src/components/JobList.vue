@@ -1,41 +1,68 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gray-100 py-6">
-    <div class="bg-white p-6 rounded shadow-md w-full max-w-lg">
-      <h2 class="text-2xl font-bold mb-4 text-center">Jobs You May Be Interested In</h2>
-      <div v-for="job in jobs" :key="job.id" class="mb-4 p-4 border rounded hover:bg-gray-50 cursor-pointer" @click="goToJobDetails(job.id)">
-        <h3 class="text-xl font-bold">{{ job.title }}</h3>
-        <p>{{ job.description }}</p>
-        <p>{{ job.location }}</p>
-        <p>{{ job.tags }}</p>
-        <p v-if="job.salary">Salary: ${{ job.salary }}</p>
-        <p v-if="job.benefits">Benefits: {{ job.benefits }}</p>
+  <div class="p-5 mt-2">
+    <h2 class="text-center text-3xl font-bold mb-8">Jobs You May Be Interested In</h2>
+      <p class="text-center mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, necessitatibus error. Facilis nemo laborum exercitationem.</p>
+      <p class="text-center mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+    <div class="job-list-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="job-card" v-for="job in jobs" :key="job.id">
+        <div class="job-header flex justify-between items-center mb-2">
+          <h3 class="text-xl font-bold">{{ job.title }}</h3>
+          <p class="text-gray-500">{{ job.location }}</p>
+        </div>
+        <div class="job-body mb-2">
+          <p>{{ job.description }}</p>
+        </div>
+        <div class="job-footer flex justify-between items-center">
+          <p v-if="job.salary" class="text-pink-600 font-bold">Salary: ${{ job.salary }}</p>
+          <router-link :to="`/jobs/${job.id}`" class="view-details-btn bg-pink-600 text-white px-4 py-2 rounded-md">View Details</router-link>
+        </div>
       </div>
     </div>
+    <PixelSpinner v-if="loading" :animation-duration="2000" :size="70" color="#f2b1cc" class="mt-4" />
   </div>
 </template>
 
 <script>
-import axiosInstance from '@/views/axios-config';
+import axios from "@/views/axios-config";
+import { PixelSpinner } from "epic-spinners";
 
 export default {
   data() {
     return {
-      jobs: []
+      jobs: [],
+      loading: true,
     };
   },
-  async mounted() {
+  async created() {
     try {
-      const response = await axiosInstance.get('/jobs');
+      const response = await axios.get('/jobs');
       this.jobs = response.data;
-      console.log(response);
     } catch (error) {
-      console.error('Error fetching jobs:', error);
+      console.error("Error fetching jobs:", error);
+    } finally {
+      this.loading = false;
     }
   },
-  methods: {
-    goToJobDetails(id) {
-      this.$router.push({ name: 'JobDetails', params: { id } });
-    }
-  }
+  components: {
+    PixelSpinner,
+  },
 };
 </script>
+
+<style scoped>
+.job-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.job-header h3 {
+  font-size: 1.25rem;
+}
+.view-details-btn:hover {
+  background-color: #500832;
+}
+</style>

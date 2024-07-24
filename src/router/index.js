@@ -4,6 +4,7 @@ import LoginForm from '../views/LoginForm.vue'
 import SignupForm from '../views/SignupForm.vue'
 import Dashboard from '../views/JobDashboard.vue'
 import JobDetails from '../components/JobDetails.vue'
+import JobUpload from '../components/JobUpload.vue'
 
 
 const router = createRouter({
@@ -39,6 +40,11 @@ const router = createRouter({
       component: Dashboard
     },
 
+    {
+      path: '/upload',
+      name: 'job_upload',
+      component: JobUpload
+    },
 
     {
       path: '/about',

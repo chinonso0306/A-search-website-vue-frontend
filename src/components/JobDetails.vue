@@ -36,7 +36,9 @@ export default {
     } catch (error) {
       console.error("Error fetching job details:", error);
     } finally {
-      this.loading = false;
+      setTimeout(() => {
+        this.loading = false;
+      }, 3000);
     }
   },
   components: {
