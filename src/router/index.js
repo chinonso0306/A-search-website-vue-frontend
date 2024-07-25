@@ -5,6 +5,7 @@ import SignupForm from '../views/SignupForm.vue'
 import Dashboard from '../views/JobDashboard.vue'
 import JobDetails from '../components/JobDetails.vue'
 import JobUpload from '../components/JobUpload.vue'
+import EditJob from '../components/UserJobs.vue'
 
 
 const router = createRouter({
@@ -12,7 +13,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'home', 
       component: HomeView
     },
 
@@ -44,6 +45,12 @@ const router = createRouter({
       path: '/upload',
       name: 'job_upload',
       component: JobUpload
+    },
+
+    {
+      path: '/user/jobs',
+      name: 'Edit',
+      component: EditJob
     },
 
     {
