@@ -125,6 +125,11 @@
         >
           Sign Up
         </button>
+
+        <p>
+        Already have  an account?
+          <RouterLink class="underline" to="/login">Login Here</RouterLink>
+        </p>
       </form>
     </div>
   </div>

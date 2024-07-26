@@ -6,16 +6,16 @@
     <nav>
       <ul>
         <li class="mb-4">
-          <router-link to="/dashboard" class="nav-link">Dashboard</router-link>
+          <RouterLink to="/dashboard" class="nav-link">Dashboard</RouterLink>
         </li>
         <li class="mb-4">
-          <router-link to="/upload" class="nav-link">Upload Job</router-link>
+          <RouterLink to="/upload" class="nav-link">Upload Job</RouterLink>
         </li>
         <li class="mb-4">
-          <router-link to="/user/jobs" class="nav-link">Your Jobs</router-link>
+          <RouterLink to="/user/jobs" class="nav-link">Your Jobs</RouterLink>
         </li>
         <li class="mb-4">
-          <router-link to="/applications" class="nav-link">Applications</router-link>
+          <RouterLink to="/applications" class="nav-link">Applications</RouterLink>
         </li>
         <li class="mb-4">
           <router-link to="/messages" class="nav-link">Messages</router-link>
@@ -32,6 +32,8 @@
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
+
 export default {};
 </script>
 

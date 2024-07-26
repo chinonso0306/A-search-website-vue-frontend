@@ -36,7 +36,7 @@
         >
         <p>
           Don't have an account yet?
-          <a class="underline" href="/signup">sign up here</a>
+          <RouterLink class="underline" to="/signup">Sign up Here</RouterLink>
         </p>
       </div>
     </div>
@@ -44,6 +44,7 @@
 </template>
 
 <script>
+import { RouterLink } from "vue-router";
 import { login, getUser } from "../authService";
 import { toast } from "vue3-toastify";
 import "vue3-toastify/dist/index.css";
