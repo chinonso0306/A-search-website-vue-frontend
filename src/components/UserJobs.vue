@@ -1,4 +1,3 @@
-
 <template>
     <div class="p-5 mt-2">
       <h2 class="text-center text-3xl font-bold mb-8">Your Uploaded Jobs</h2>
@@ -16,7 +15,7 @@
             <p v-if="job.salary" class="text-pink-600 font-bold">Salary: ${{ job.salary }}</p>
             <div class="action-buttons">
               <button @click="editJob(job.id)" class="bg-blue-600 text-white px-4 py-2 rounded-md mr-2">Edit</button>
-              <button @click="deleteJob(job.id)" class="bg-red-600 text-white px-4 py-2 rounded-md">Delete</button>
+              <button @click="confirmDelete(job.id)" class="bg-red-600 text-white px-4 py-2 rounded-md">Delete</button>
             </div>
           </div>
         </div>
@@ -26,7 +25,7 @@
   </template>
   
   <script>
-  import axiosInstance from "@/views/axios-config";
+  import axios from "@/views/axios-config";
   import { PixelSpinner } from "epic-spinners";
   
   export default {
@@ -38,7 +37,7 @@
     },
     async created() {
       try {
-        const response = await axiosInstance.get('/user/jobs');
+        const response = await axios.get('/user/jobs');
         this.jobs = response.data;
       } catch (error) {
         console.error("Error fetching user jobs:", error);
@@ -49,7 +48,7 @@
     methods: {
       async deleteJob(id) {
         try {
-          await axiosInstance.delete(`/jobs/${id}`);
+          await axios.delete(`/jobs/${id}`);
           this.jobs = this.jobs.filter(job => job.id !== id);
         } catch (error) {
           console.error("Error deleting job:", error);
@@ -57,6 +56,11 @@
       },
       editJob(id) {
         this.$router.push({ name: 'edit-job', params: { id } });
+      },
+      confirmDelete(id) {
+        if (confirm('Are you sure you want to delete this job?')) {
+          this.deleteJob(id);
+        }
       }
     },
     components: {

@@ -12,6 +12,9 @@
           <router-link to="/upload" class="nav-link">Upload Job</router-link>
         </li>
         <li class="mb-4">
+          <router-link to="/user/jobs" class="nav-link">Your Jobs</router-link>
+        </li>
+        <li class="mb-4">
           <router-link to="/applications" class="nav-link">Applications</router-link>
         </li>
         <li class="mb-4">
@@ -22,9 +25,6 @@
         </li>
         <li class="mb-4">
           <router-link to="/settings" class="nav-link">Settings</router-link>
-        </li>
-        <li class="mb-4">
-          <router-link to="/user/jobs" class="nav-link">Your Jobs</router-link>
         </li>
       </ul>
     </nav>

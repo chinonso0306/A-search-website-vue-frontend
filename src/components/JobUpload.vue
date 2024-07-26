@@ -1,9 +1,9 @@
 <template>
-    <div class="dashboard-container flex flex-col md:flex-row min-h-screen bg-gray-100">
+    <div class="dashb flex flex-col md:flex-row min-h-screen">
       <SideBar class="w-full md:w-1/4 lg:w-1/5" />
-      <div class="main-content flex-1 p-4">
-        <SearchBar class="mb-4" />
-        <div class="job-form-container bg-white p-6 rounded shadow-md w-full max-w-3xl mx-auto mt-6">
+      <div class="m flex-1 p-4">
+      
+        <div class="j p-6 rounded shadow-md w-full max-w-3xl mx-auto mt-6">
           <h2 class="text-2xl font-bold mb-4 text-center text-gray-800">Create a Job</h2>
           <form @submit.prevent="handleSubmit">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -157,7 +157,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #f7fafc;
+    /* background-color: #f7fafc; */
   }
   @media (min-width: 768px) {
     .dashboard-container {
@@ -169,15 +169,12 @@
     padding: 1rem;
   }
   .job-form-container {
-    background-color: #fff;
+    /* background-color: #fff; */
     padding: 1.5rem;
     border-radius: 0.5rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
   }
-  input, textarea {
-    background-color: #f8f9fa;
-    border-color: #dee2e6;
-  }
+ 
   button {
     background-color: #ff4081;
   }
