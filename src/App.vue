@@ -20,7 +20,7 @@ import HelloWorld from './components/HelloWorld.vue'
               <RouterLink to="/about">About</RouterLink>
               <RouterLink to="/signup">Signup</RouterLink>
               <RouterLink to="/login">login</RouterLink>
-              <RouterLink to="/test">login</RouterLink>
+              <!-- <RouterLink to="/test">login</RouterLink> -->
             </div>
             <RouterView />
      
