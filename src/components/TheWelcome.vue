@@ -6,13 +6,19 @@
         <div class="flex justify-between h-16">
           <div class="flex">
             <div class="flex-shrink-0 flex items-center">
-              <a href="/" class="text-2xl font-bold text-pink-600">Jhubs</a>
+              <RouterLink to="/" class="text-2xl font-bold text-pink-600">Jhubs</RouterLink>
+              <!-- <a href="/" class="text-2xl font-bold text-pink-600"></a> -->
             </div>
           </div>
           <div class="flex items-center space-x-4">
-            <a href="/login" class="font-bold text-pink-600 hover:text-pink-600">Login</a>
-            <a href="/signup" class="font-bold text-pink-600 hover:text-pink-600">Sign Up</a>
-            <a href="#" class="font-bold text-pink-600 hover:text-pink-600">About Us</a>
+            <RouterLink to="/login"  class="font-bold text-pink-600 hover:text-pink-600">Login</RouterLink>
+            <!-- <a href="/login" class="font-bold text-pink-600 hover:text-pink-600">Login</a> -->
+            <RouterLink to="/signup"  class="font-bold text-pink-600 hover:text-pink-600">Signup</RouterLink>
+            <!-- <a href="/signup" class="font-bold text-pink-600 hover:text-pink-600">Sign Up</a> -->
+
+            <RouterLink to="/dashboard"  class="font-bold text-pink-600 hover:text-pink-600">Dashboard</RouterLink>
+
+            <!-- <a href="/" class="font-bold text-pink-600 hover:text-pink-600">About Us</a> -->
           </div>
         </div>
       </div>
