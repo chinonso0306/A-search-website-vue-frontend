@@ -72,8 +72,8 @@ export default {
         }
       } catch (error) {
         if (error.response.status == 401) {
-          toast.error("Unauthorized user", {
-            position: toast.POSITION.TOP_LEFT,
+          toast.error("Invalid credentials", {
+            position: toast.POSITION.TOP_CENTER,
           });
         }
         console.error("Login error:", error.response);

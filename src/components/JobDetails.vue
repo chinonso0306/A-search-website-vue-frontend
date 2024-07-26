@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen flex items-center justify-center bg-gray-100 py-6">
     <div v-if="loading" class="flex items-center justify-center">
-      <pixel-spinner :animation-duration="2000" :size="70" color="#f2b1cc" />
+      <pixel-spinner :animation-duration="2000" :size="70" color="#db2777" />
     </div>
     <div v-else class="bg-white p-6 rounded shadow-md w-full max-w-lg">
       <h2 class="text-2xl font-bold mb-4 text-center">{{ job.title }}</h2>

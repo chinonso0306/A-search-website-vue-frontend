@@ -178,6 +178,10 @@ export default {
           toast.error("Unauthorized user", {
             position: toast.POSITION.TOP_LEFT,
           });
+        }else if(error.response.status == 500){
+          toast.error("Email Already Exist !", {
+            position: toast.POSITION.TOP_CENTER,
+          });
         }
         console.error("Error registering user:", error.response);
       }

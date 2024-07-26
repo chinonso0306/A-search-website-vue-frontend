@@ -1,5 +1,11 @@
 <template>
   <div class="p-5 mt-2">
+    <div v-if="loading" class="flex items-center justify-center">
+      <pixel-spinner :animation-duration="2000" :size="70" color="#db2777" />
+    </div>
+
+    <div v-else class="">
+
     <h2 class="text-center text-3xl font-bold mb-8">Jobs You May Be Interested In</h2>
     <p class="text-center mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, necessitatibus error. Facilis nemo laborum exercitationem.</p>
     <p class="text-center mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
@@ -22,7 +28,7 @@
         </div>
       </div>
     </div>
-    <PixelSpinner v-if="loading" :animation-duration="2000" :size="70" color="#f2b1cc" class="mt-4" />
+  </div>
   </div>
 </template>
 
