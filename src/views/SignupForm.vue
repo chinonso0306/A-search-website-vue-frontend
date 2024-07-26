@@ -126,7 +126,7 @@
           Sign Up
         </button>
 
-        <p>
+        <p class="text-center mt-3">
         Already have  an account?
           <RouterLink class="underline" to="/login">Login Here</RouterLink>
         </p>

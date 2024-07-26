@@ -34,7 +34,7 @@
         <a href="#" class="text-pink-300 hover:underline"
           >Forgot your password?</a
         >
-        <p>
+        <p class="text-center mt-3">
           Don't have an account yet?
           <RouterLink class="underline" to="/signup">Sign up Here</RouterLink>
         </p>
