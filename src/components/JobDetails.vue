@@ -5,7 +5,7 @@
         <div class="flex justify-between h-16">
           <div class="flex">
             <div class="flex-shrink-0 flex items-center">
-              <RouterLink to="/" class="text-2xl font-bold text-pink-600">Jhubs</RouterLink>
+              <RouterLink to="/" class="text-2xl font-bold text-pink-600">AvatarFate</RouterLink>
               <!-- <a href="/" class="text-2xl font-bold text-pink-600"></a> -->
             </div>
           </div>

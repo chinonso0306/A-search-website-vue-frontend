@@ -1,8 +1,8 @@
 <!-- SideBar.vue -->
 
 <template>
-  <div class="sidebar bg-pink-600 text-white w-full md:w-64 p-4">
-    <div class="logo text-3xl font-bold mb-6">Jhub</div>
+  <div class="sidebar bg-blue-600 text-white w-full md:w-64 p-4">
+    <div class="logo text-3xl font-bold mb-6">AvatarFate</div>
     <nav>
       <ul>
         <li class="mb-4">

@@ -25,13 +25,13 @@
         </div>
         <button
           type="submit"
-          class="w-full bg-pink-600 text-white p-2 rounded hover:bg-pink-400 transition duration-200"
+          class="w-full bg-blue-600 text-white p-2 rounded hover:bg-pink-400 transition duration-200"
         >
           Login
         </button>
       </form>
       <div class="mt-4 text-center">
-        <a href="#" class="text-pink-300 hover:underline"
+        <a href="#" class="text-blue-300 hover:underline"
           >Forgot your password?</a
         >
         <p class="text-center mt-3">

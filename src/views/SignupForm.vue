@@ -113,7 +113,7 @@
             />
             <span class="ml-2 text-gray-700"
               >I agree to the
-              <a href="#" class="text-pink-300 hover:underline"
+              <a href="#" class="text-blue-500 hover:underline"
                 >terms and conditions</a
               ></span
             >
@@ -121,7 +121,7 @@
         </div>
         <button
           type="submit"
-          class="w-full bg-pink-600 text-white p-2 rounded hover:bg-pink-400 transition duration-200"
+          class="w-full bg-blue-600 text-white p-2 rounded hover:bg-pink-400 transition duration-200"
         >
           Sign Up
         </button>
